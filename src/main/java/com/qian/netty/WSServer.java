@@ -39,7 +39,7 @@ public class WSServer {
         server = new ServerBootstrap();
         server.group(mainGroup, subGroup)
                 .channel(NioServerSocketChannel.class)
-                .childHandler(null);
+                .childHandler(new WSServerInitialzer());
     }
 
     public void start() {
